@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    background:linear-gradient(135deg,#050816,#0b1120,#141b35,#050816);
+    background-size:400% 400%;
+    animation:bgmove 12s ease infinite;
+    color:white;
+    overflow-x:hidden;
+}
+
+@keyframes bgmove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Header */
+
+header{
+    width:100%;
+    text-align:center;
+    padding:35px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    color:#00f7ff;
+    text-shadow:
+        0 0 10px #00f7ff,
+        0 0 20px #00f7ff,
+        0 0 40px #008cff;
+    letter-spacing:4px;
+}
+
+/* Main */
+
+main{
+    width:90%;
+    max-width:900px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.06);
+    border:2px solid rgba(0,247,255,.25);
+    border-radius:25px;
+    backdrop-filter:blur(12px);
+    padding:50px;
+    box-shadow:
+        0 0 20px rgba(0,247,255,.25),
+        inset 0 0 10px rgba(255,255,255,.05);
+}
+
+main a{
+    display:inline-block;
+}
+
+main img{
+    width:320px;
+    max-width:90%;
+    transition:.4s;
+    filter:drop-shadow(0 0 15px cyan);
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
+
+main img:hover{
+    transform:scale(1.1) rotate(-5deg);
+    filter:
+        drop-shadow(0 0 25px cyan)
+        drop-shadow(0 0 40px #00f7ff);
+}
+
+main h2{
+    margin-top:40px;
+    text-align:center;
+    font-size:1.5rem;
+    color:#ffffff;
+    text-shadow:0 0 12px cyan;
+    animation:blink 2s infinite;
+}
+
+@keyframes blink{
+    0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:.6;
+    }
+}
+
+/* Footer */
+
+footer{
+    width:100%;
+    text-align:center;
+    padding:18px;
+    color:#9db3d8;
+    background:rgba(0,0,0,.35);
+    border-top:1px solid rgba(255,255,255,.1);
+    font-size:.9rem;
+    letter-spacing:1px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+header h1{
+    font-size:2rem;
+}
+
+main{
+    padding:30px;
+}
+
+main img{
+    width:240px;
+}
+
+main h2{
+    font-size:1.1rem;
+}
+
+}
+
+@media(max-width:480px){
+
+header h1{
+    font-size:1.5rem;
+}
+
+main{
+    width:95%;
+    padding:20px;
+}
+
+main img{
+    width:180px;
+}
+
+main h2{
+    font-size:1rem;
+}
+
+}</style>
+    
+</head>
+<body>
+    <header>
+        <h1>WANNA PLAY STONE PAPER SCISSOR</h1>
+    </header>
+
+    <main>
+        <a href="round/"><img src="https://www.pngitem.com/pimgs/m/226-2260873_transparent-rock-paper-scissors-png-png-download.png" alt="SPC"></a>
+        <h2>CLICK ABOVE IMG TO PLAY STONE PAPER SCISSOR</h2>
+    </main>
+
+    <footer>
+       © Made by Shlok Singh 2026
+    </footer>
+</body>
+</html>

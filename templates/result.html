@@ -1,0 +1,313 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STONE PAPER SCISSOR - VANKU</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:linear-gradient(135deg,#040816,#09132c,#101d45,#040816);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    color:white;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/*================ HEADER ================*/
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+}
+
+header h1{
+    font-size:2.4rem;
+    color:#00f7ff;
+    text-shadow:
+        0 0 10px cyan,
+        0 0 25px cyan;
+}
+
+nav{
+    display:flex;
+    gap:15px;
+}
+
+nav img{
+    width:55px;
+    transition:.35s;
+    filter:drop-shadow(0 0 10px cyan);
+}
+
+nav img:hover{
+    transform:scale(1.15) rotate(-8deg);
+}
+
+/*================ MAIN ================*/
+
+main{
+    flex:1;
+    width:90%;
+    max-width:850px;
+    margin:40px auto;
+    padding:45px;
+    text-align:center;
+
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    border:2px solid rgba(0,255,255,.25);
+
+    box-shadow:
+        0 0 25px rgba(0,255,255,.25);
+}
+
+/* Top Images */
+
+main>img{
+    width:120px;
+    margin:15px;
+    filter:drop-shadow(0 0 15px cyan);
+    animation:float 3s ease-in-out infinite;
+    transition:.35s;
+}
+
+main>img:nth-child(2){
+    animation-delay:.4s;
+}
+
+main>img:nth-child(3){
+    animation-delay:.8s;
+}
+
+main>img:hover{
+    transform:scale(1.1);
+}
+
+@keyframes float{
+
+0%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-12px);
+}
+
+100%{
+    transform:translateY(0);
+}
+
+}
+
+/*================ RESULT TEXT ================*/
+
+main h2:first-of-type{
+    margin:35px 0 30px;
+    font-size:2rem;
+    color:#00ff9d;
+    text-shadow:
+        0 0 10px #00ff9d,
+        0 0 25px #00ff9d;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+    transform:scale(1);
+}
+
+50%{
+    transform:scale(1.04);
+}
+
+100%{
+    transform:scale(1);
+}
+
+}
+
+/*================ SCORE ================*/
+
+p{
+    margin:18px 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:18px;
+    font-size:18px;
+}
+
+textarea{
+    width:160px;
+    height:45px;
+    resize:none;
+    border:none;
+    outline:none;
+    border-radius:10px;
+
+    background:#09142c;
+    color:#00f7ff;
+    text-align:center;
+    padding-top:12px;
+
+    font-weight:bold;
+
+    border:2px solid cyan;
+
+    box-shadow:0 0 15px rgba(0,255,255,.2);
+}
+
+/*================ MENU ================*/
+
+/*================ MENU ================*/
+main h2:last-of-type{
+    margin-top:45px;
+    color:#00f7ff;
+    text-shadow:0 0 10px cyan;
+}
+
+main p{
+    margin-top:25px;
+}
+
+main p a{
+    display:inline-block;
+}
+
+main p a img{
+    width:60px;
+    margin:0 20px;
+    transition:.35s;
+    filter:drop-shadow(0 0 10px cyan);
+}
+
+main p a img:hover{
+    transform:translateY(-8px) scale(1.15);
+    filter:drop-shadow(0 0 25px cyan);
+}
+
+/* Restart icon */
+main p a:last-child img{
+    width:45px;
+}
+/*================ FOOTER ================*/
+
+footer{
+    text-align:center;
+    padding:18px;
+    background:rgba(0,0,0,.35);
+    border-top:1px solid rgba(255,255,255,.1);
+    color:#9db3d8;
+}
+
+/*================ RESPONSIVE ================*/
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+}
+
+header h1{
+    font-size:2rem;
+    text-align:center;
+}
+
+main{
+    padding:30px 20px;
+}
+
+main>img{
+    width:90px;
+}
+
+main h2:first-of-type{
+    font-size:1.6rem;
+}
+
+textarea{
+    width:140px;
+}
+
+p{
+    flex-direction:column;
+}
+
+}
+
+@media(max-width:480px){
+
+header h1{
+    font-size:1.5rem;
+}
+
+main>img{
+    width:70px;
+}
+
+textarea{
+    width:120px;
+}
+
+main p a img{
+    width:45px;
+}
+
+main p a:last-child img{
+    width:30px;
+}
+
+}
+</style>
+  
+</head>
+
+<body>
+    <header>
+        <h1>STONE PAPER SCISSOR</h1>
+        <nav>
+            <a href="/"><img src="{%static 'homeicon.png'%}" alt="home" width="50"></a>
+            <a href="/round"><img src="{%static 'backbutton1.png'%}" alt="back" width="50"></a>
+        </nav>
+    </header>
+    <main>
+        <img src="{%static 'stone.png'%}" alt="stone"><img src="{%static 'paper.png'%}" alt="paper"><img
+            src="{%static 'scissor.png'%}" alt="scissor">
+
+        <h2><b><u>!!!{{ result}}!!!</u></b></h2>
+        <p>your score = <textarea >{{yscore}}</textarea>    computer,s score = <textarea >{{cscore}}</textarea></p>
+        <br>
+         <h2><u><b>MENU</b></u></h2>
+         <p><a href="/"><img src="{%static 'homeicon.png'%}" alt="home" width="50"></a>
+            <a href="/round"><img src="{%static 'restart.png'%}" alt="restart" width="30"></a></p>
+    </main>
+    <footer>
+        <p>© Made by Shlok Singh 2026</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+#  virtual environment
+RPCenv/
+
+# python
+__pycache__/
+*.py[cod]
+
+#database
+db.sqlite3
+

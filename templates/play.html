@@ -1,0 +1,274 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STONE PAPER SCISSOR - VANKU</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:linear-gradient(135deg,#050816,#0b1120,#141b35,#050816);
+    background-size:400% 400%;
+    animation:bgmove 12s ease infinite;
+    color:#fff;
+}
+
+@keyframes bgmove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* ================= HEADER ================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+}
+
+header h1{
+    color:#00f7ff;
+    font-size:2.4rem;
+    text-shadow:0 0 15px cyan;
+}
+
+nav{
+    display:flex;
+    gap:15px;
+}
+
+nav img{
+    width:55px;
+    transition:.3s;
+    filter:drop-shadow(0 0 8px cyan);
+}
+
+nav img:hover{
+    transform:scale(1.15) rotate(-8deg);
+}
+
+/* ================= MAIN ================= */
+
+main{
+    flex:1;
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+    background:rgba(255,255,255,.06);
+    border:2px solid rgba(0,255,255,.25);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(0,255,255,.15);
+}
+
+main h1{
+    color:#00f7ff;
+    margin-bottom:30px;
+    text-shadow:0 0 15px cyan;
+}
+
+main h2{
+    margin:30px 0 20px;
+    color:#00f7ff;
+    text-shadow:0 0 10px cyan;
+}
+
+/* ================= GAME BUTTONS ================= */
+
+form{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+form button{
+    width:150px;
+    height:150px;
+    border-radius:20px;
+    border:2px solid cyan;
+    background:rgba(255,255,255,.08);
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 0 20px rgba(0,255,255,.2);
+}
+
+form button:hover{
+    transform:translateY(-12px) scale(1.08);
+    box-shadow:
+        0 0 20px cyan,
+        0 0 40px cyan;
+}
+
+form button:active{
+    transform:scale(.95);
+}
+
+form img{
+    width:95px;
+    transition:.3s;
+}
+
+form button:hover img{
+    transform:rotate(-10deg) scale(1.1);
+}
+
+/* ================= RESULT BOX ================= */
+
+p{
+    margin:18px 0;
+    font-size:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+textarea{
+    width:180px;
+    height:45px;
+    resize:none;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#09142c;
+    color:#00f7ff;
+    text-align:center;
+    padding-top:12px;
+    font-size:15px;
+    font-weight:bold;
+    border:2px solid cyan;
+    box-shadow:0 0 12px rgba(0,255,255,.2);
+}
+
+/* ================= SCOREBOARD ================= */
+
+main p:last-of-type textarea{
+    background:#102244;
+    color:#7dff89;
+    border-color:#00ff95;
+    box-shadow:0 0 15px rgba(0,255,150,.3);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:18px;
+    background:rgba(0,0,0,.35);
+    color:#9db3d8;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    gap:20px;
+}
+
+header h1{
+    font-size:2rem;
+    text-align:center;
+}
+
+form{
+    gap:20px;
+}
+
+form button{
+    width:120px;
+    height:120px;
+}
+
+form img{
+    width:70px;
+}
+
+textarea{
+    width:150px;
+}
+
+p{
+    flex-direction:column;
+}
+
+}
+
+@media(max-width:480px){
+
+main{
+    padding:25px 15px;
+}
+
+header h1{
+    font-size:1.5rem;
+}
+
+form button{
+    width:95px;
+    height:95px;
+}
+
+form img{
+    width:55px;
+}
+
+textarea{
+    width:130px;
+    font-size:13px;
+}
+
+}</style>
+</head>
+
+<body>
+    <header>
+        <h1>STONE PAPER SCISSOR</h1>
+        <nav>
+            <a href="/"><img src="{%static 'homeicon.png'%}" alt="home" width="50"></a>
+            <a href="/round"><img src="{%static 'backbutton1.png'%}" alt="back" width="50"></a>
+        </nav>
+    </header>
+    <main>
+        <h1>round {{round}}</h1>
+        <form action="/play" method="get">
+            <button type="submit" name="choice" value="-1"><img src="{%static 'stone.png'%}" alt="stone"></button>
+            <button type="submit" name="choice" value="0"><img src="{%static 'paper.png'%}" alt="paper"></button>
+            <button type="submit" name="choice" value="1"><img src="{%static 'scissor.png'%}" alt="scissor"></button>
+        </form>
+        <h2><b><u>The result of the last </u></b></h2>
+
+
+        <p> Your choice = <textarea>{{your_choice}}</textarea> Computers choice = <textarea>{{com_choice}}</textarea></p>
+          <p>  result = <textarea>{{result}}</textarea> </p>
+        <br>
+        <h2><b><u>CURRENT SCORE</u></b></h2>
+        <p>your score = <textarea >{{yscore}}</textarea>    computer,s score = <textarea >{{cscore}}</textarea></p>
+    </main>
+    <footer>
+        <p>© Made by Shlok Singh 2026</p>
+    </footer>
+</body>
+
+</html>
