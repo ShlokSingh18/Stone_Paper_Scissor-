@@ -35,7 +35,7 @@ Stone-Paper-Scissor/
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/stone-paper-scissor.git
+git clone https://github.com/ShlokSingh18/Stone_Paper_Scissor-.git
 ```
 
 ### Move into the project
