@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vai_vhyj($@^e22ha%774(yfhqsh-r6oa5*sul$k2#qzs(2nc%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["https://stone-paper-scissor-68oc.onrender.com"]
+ALLOWED_HOSTS = ["https://stone-paper-scissor-68oc.onrender.com",]
 
 
 # Application definition
