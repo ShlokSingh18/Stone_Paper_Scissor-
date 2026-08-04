@@ -1,6 +1,6 @@
 # 🌐 Live Demo
 
-🔗 https://your-deployed-link.onrender.com
+🔗 https://stone-paper-scissor-68oc.onrender.com
 
 
 # 🎮 Stone Paper Scissor Game
