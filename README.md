@@ -21,7 +21,7 @@ A modern **Stone Paper Scissor** game built with **Django** featuring a futurist
 ## 📂 Project Structure
 
 ```
-stone-paper-scissor/
+Stone-Paper-Scissor/
 │── Rock_Paper_Scissor/
 │── static/
 │── templates/
