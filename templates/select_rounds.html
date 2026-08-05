@@ -248,8 +248,9 @@ input[type="number"]{
             src="{%static 'scissor.png'%}" alt="scissor">
 
         <h2><b><u>ENTER NO OF ROUNDS</u></b></h2>
-        <form action="/round" method="get">
-            <input type="number" name="rounds" id="rounds"placeholder="Enter No of Rounds"min="1" required  >
+        <form  action="/round/" method="post">
+            {% csrf_token %}
+            <input type="number" name="rounds" id="rounds" placeholder="Enter No of Rounds" min="1" max="100" step="1" value = 0 onfocus="if(this.value=='0') this.value='';" onblur="if(this.value=='') this.value='0';" >
         <!-- <textarea type="number" name="rounds" id="rounds" placeholder="Enter No of Rounds" style="width: 100px; height: 40px; resize: none;"></textarea> -->
         <br>
         <button type="submit">select</button>

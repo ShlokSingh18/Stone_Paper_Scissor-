@@ -252,19 +252,19 @@ textarea{
     </header>
     <main>
         <h1>round {{round}}</h1>
-        <form action="/play" method="get">
+        <form action="/play/" method="post">
+            {% csrf_token %}
             <button type="submit" name="choice" value="-1"><img src="{%static 'stone.png'%}" alt="stone"></button>
             <button type="submit" name="choice" value="0"><img src="{%static 'paper.png'%}" alt="paper"></button>
             <button type="submit" name="choice" value="1"><img src="{%static 'scissor.png'%}" alt="scissor"></button>
         </form>
-        <h2><b><u>The result of the last </u></b></h2>
-
-
-        <p> Your choice = <textarea>{{your_choice}}</textarea> Computers choice = <textarea>{{com_choice}}</textarea></p>
-          <p>  result = <textarea>{{result}}</textarea> </p>
+        <a href="/result" >{{finalresult}}</a>
+        <h2><b><u>The result of the last round</u></b></h2>
+        <p> Your choice = <textarea readonly>{{your_choice}}</textarea readonly> Computers choice = <textarea readonly>{{com_choice}}</textarea></p>
+          <p>  result = <textarea readonly>{{result}}</textarea> </p>
         <br>
         <h2><b><u>CURRENT SCORE</u></b></h2>
-        <p>your score = <textarea >{{yscore}}</textarea>    computer,s score = <textarea >{{cscore}}</textarea></p>
+        <p>your score = <textarea readonly>{{yscore}}</textarea>    computer,s score = <textarea readonly >{{cscore}}</textarea></p>
     </main>
     <footer>
         <p>© Made by Shlok Singh 2026</p>
